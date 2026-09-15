@@ -1,0 +1,83 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Catches a hosting link that rots between releases. The 404 class this
+    # guards against reached ~89 published release pages across the sibling
+    # products before anyone checked one.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint every release-notes file
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(.github/release-notes/v*.md)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "no release-notes files yet — nothing to lint"
+            exit 0
+          fi
+          for f in "${files[@]}"; do
+            tag=$(basename "$f" .md)
+            echo "::group::${tag}"
+            tools/ci/lint-release-notes.sh "$f" "${tag#v}"
+            echo "::endgroup::"
+          done
+
+      # HTML comments are stripped first. The README parks a commented-out
+      # <img> as the slot for the app screenshot, and a naive grep reads that
+      # as a broken image.
+      - name: README links and images resolve
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess, sys
+
+          src = open("README.md", encoding="utf-8").read()
+          body = re.sub(r"<!--.*?-->", "", src, flags=re.S)
+          fail = False
+
+          for img in re.findall(r'src="([^"]+)"', body):
+              if img.startswith("http"):
+                  continue
+              if os.path.isfile(img):
+                  print(f"OK image {img}")
+              else:
+                  print(f"::error::README references image {img} which is not in the repo")
+                  fail = True
+
+          for href in re.findall(r"\]\(([^)]+)\)", body):
+              if href.startswith("#"):
+                  continue
+              if href.startswith("http"):
+                  code = subprocess.run(
+                      ["curl", "-s", "-o", os.devnull, "-w", "%{http_code}",
+                       "-L", "--max-time", "25", href],
+                      capture_output=True, text=True).stdout.strip()
+                  # A releases/latest link 404s until the first release exists,
+                  # so an unreachable link here is a warning, not a gate.
+                  if code != "200":
+                      print(f"::warning::HTTP {code} for {href}")
+                  else:
+                      print(f"OK link {href}")
+                  continue
+              target = href.split("#")[0]
+              if target and not os.path.exists(target):
+                  print(f"::error::README links {href} but it does not exist in the repo")
+                  fail = True
+
+          sys.exit(1 if fail else 0)
+          PY
+
+      - name: Shell scripts parse clean
+        run: |
+          for f in tools/ci/*.sh; do bash -n "$f"; echo "OK $f"; done
