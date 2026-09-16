@@ -2,17 +2,19 @@
   <img src="docs/img/waygate-lockup.png" alt="Waygate" width="460">
 </p>
 
+<p align="center">
+  <a href="#install"><img src="https://img.shields.io/badge/Platform-Windows_10%2F11%2FServer-blue.svg" alt="Platform"></a>
+  <a href="https://store.steampowered.com/app/2402680/"><img src="https://img.shields.io/badge/Game-Dimraeth-7b5cff.svg" alt="Game"></a>
+  <a href="#-eight-players-eight-seats"><img src="https://img.shields.io/badge/Players-up_to_8-brightgreen.svg" alt="Players"></a>
+  <a href="https://github.com/HumanGenome/WaygateServer"><img src="https://img.shields.io/badge/Server_Source-WaygateServer-444.svg" alt="Server Source"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License"></a>
+</p>
+
 # Waygate
 
-[![Platform](https://img.shields.io/badge/Platform-Windows_10%2F11%2FServer-blue.svg)](#install)
-[![Game](https://img.shields.io/badge/Game-Dimraeth-7b5cff.svg)](https://store.steampowered.com/app/2402680/)
-[![Players](https://img.shields.io/badge/Players-up_to_8-brightgreen.svg)](#-eight-players-eight-seats)
-[![Server Source](https://img.shields.io/badge/Server_Source-WaygateServer-444.svg)](https://github.com/HumanGenome/WaygateServer)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
+Dimraeth has no dedicated server. Its multiplayer is a Steam lobby hosted from one player's copy of the game. Waygate adds a Dimraeth dedicated server: [WaygateServer](https://github.com/HumanGenome/WaygateServer) runs the game headless on a Windows machine with a public IP and port, and the Waygate app connects players to it by address.
 
-Waygate is the player app and server package for **Dimraeth** dedicated servers. Dimraeth's own multiplayer is a Steam lobby run from one player's game. [WaygateServer](https://github.com/HumanGenome/WaygateServer) runs the game as a server on a UDP port, and this app connects your copy of the game to it by address.
-
-Every player installs the app. It starts your own Steam copy of Dimraeth, so the game has to be installed on the same PC.
+Every player must install Waygate to join a Waygate server. Stock Dimraeth cannot connect to a Waygate server directly.
 
 <p align="center">
   <img src="docs/img/launcher.png" alt="The Waygate app: a saved server with its player count and a Connect button" width="860">
@@ -20,15 +22,12 @@ Every player installs the app. It starts your own Steam copy of Dimraeth, so the
 
 ## Features
 
-### 🏰 The server runs with nobody on it
-The save sits on the server and the game keeps running there with zero players connected. No player's PC is involved. Log in whenever you like and the world is where the last person left it.
+### 🧭 Join by address
+Add the server's `ip:port` in the app, pick a character, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up and how many players are on it.
 
 <p align="center">
   <img src="docs/img/in-game.png" alt="A Dimraeth world on a Waygate server" width="860">
 </p>
-
-### 🧭 Join by address
-Add the server's `ip:port` in the app, pick a character, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up and how many players are on it.
 
 ### 👥 Eight players, eight seats
 Dimraeth's own co-op limit is eight. The server's host character takes no seat, is hidden from the player list and belongs to no party, so every seat goes to a player. The first player in leads the party and the rest join it.
@@ -46,7 +45,7 @@ The host can turn player chat off for the whole server. Dimraeth's own chat sett
 The server answers Source A2S on the port above the gameplay port with its status and player count, so monitoring tools and hosting panels can read it.
 
 ### 🚦 Boot report
-If the server cannot start, it writes what stopped it to `waygate\boot-report.txt` and refuses to run. It does not come up half working.
+If the server cannot start, it writes what stopped it to `waygate\boot-report.txt` and refuses to run.
 
 ### 🔄 Plain game afterwards
 Starting Dimraeth from Steam after a Waygate session runs the normal game. The mod only acts when the app started the game. The app updates itself on start.
@@ -58,7 +57,7 @@ Starting Dimraeth from Steam after a Waygate session runs the normal game. The m
 ## Install
 
 ### Managed hosting
-[SurvivalServers.com](https://www.survivalservers.com/services/game_servers/dimraeth/?utm_source=github&utm_medium=readme_install&utm_campaign=waygate) rents Dimraeth servers with Waygate preinstalled. The control panel has an Open in Waygate button that adds the server to the app.
+[SurvivalServers.com Dimraeth server hosting](https://www.survivalservers.com/services/game_servers/dimraeth/?utm_source=github&utm_medium=readme_install&utm_campaign=waygate) comes with Waygate installed and the ports open. The control panel has an Open in Waygate button that adds the server to the app.
 
 ### Players
 1. Download `WaygateSetup-latest.exe` from the [latest release](https://github.com/HumanGenome/Waygate/releases/latest/download/WaygateSetup-latest.exe).
