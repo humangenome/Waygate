@@ -30,7 +30,7 @@ Add the server's `ip:port` in the app, pick a character, click Connect. The app 
 </p>
 
 ### 👥 Eight players, eight seats
-Dimraeth's own co-op limit is eight. The server's host character takes no seat, is hidden from the player list and belongs to no party, so every seat goes to a player. The first player in leads the party and the rest join it.
+Dimraeth's own co-op limit is eight. The server has no character of its own, so every seat goes to a player. The first player in leads the party and the rest join it.
 
 ### 🧝 Your own characters
 Heroes are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server.
