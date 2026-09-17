@@ -41,6 +41,16 @@ Set one on the server and the app asks for it before connecting.
 ### 💬 Chat switch
 The host can turn player chat off for the whole server. Dimraeth's own chat setting is per player; this one is enforced on the server.
 
+### 🗺️ The server's own web page
+Every Waygate server serves a page about itself: the live map of the world with each player's position, the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
+
+<p align="center">
+  <img src="docs/img/web-map.png" alt="A Waygate server's web page: the Earlwood map with a player's live position" width="860">
+</p>
+
+### 🖥️ Console in the app
+The Console tab in the app talks to the server's admin port: the live log, the command line and the same commands the server's page has, once the admin password is set.
+
 ### 📡 Server query
 The server answers Source A2S on the port above the gameplay port with its status and player count, so monitoring tools and hosting panels can read it.
 
@@ -65,7 +75,7 @@ Starting Dimraeth from Steam after a Waygate session runs the normal game. The m
 3. Open Waygate, add the server address, pick a character, click Connect.
 
 ### Self-hosted servers
-Requirements, ports, setup, the status file and the commands are in [WaygateServer](https://github.com/HumanGenome/WaygateServer). You need a Windows machine and a copy of Dimraeth's game files on it from your own Steam copy.
+Requirements, ports, setup, the web page, the status file and the commands are in [WaygateServer](https://github.com/HumanGenome/WaygateServer). You need a Windows machine and a copy of Dimraeth's game files on it from your own Steam copy.
 
 ## Releases
 
