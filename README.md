@@ -52,7 +52,7 @@ Every Waygate server serves a page about itself: the world map drawn from the ga
 The Console tab in the app talks to the server's admin port: the live log, the command line and the same commands the server's page has, once the admin password is set.
 
 <p align="center">
-  <img src="docs/img/launcher-console.png" alt="The app's Console tab connected to a server, with a status command answered" width="860">
+  <img src="docs/img/launcher-console.png" alt="The app's Console tab connected to a server, with a command typed" width="860">
 </p>
 
 ### 🧩 Mods
