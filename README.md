@@ -17,7 +17,7 @@ Dimraeth has no dedicated server. Its multiplayer is a Steam lobby hosted from o
 Every player must install Waygate to join a Waygate server. Stock Dimraeth cannot connect to a Waygate server directly.
 
 <p align="center">
-  <img src="docs/img/launcher.png" alt="The Waygate app: a saved server with its player count and a Connect button" width="860">
+  <img src="docs/img/launcher.png" alt="The Waygate app: a saved server with its status and player count, the Connect button, and the Console and Mods tabs" width="860">
 </p>
 
 ## Features
@@ -42,14 +42,25 @@ Set one on the server and the app asks for it before connecting.
 The host can turn player chat off for the whole server. Dimraeth's own chat setting is per player; this one is enforced on the server.
 
 ### 🗺️ The server's own web page
-Every Waygate server serves a page about itself: the live map of the world with each player's position, the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
+Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
 
 <p align="center">
-  <img src="docs/img/web-map.png" alt="A Waygate server's web page: the Earlwood map with a player's live position" width="860">
+  <img src="docs/img/web-map.png" alt="A Waygate server's web page: the Earlwood map from the game's own pixels with a player's live position" width="860">
 </p>
 
 ### 🖥️ Console in the app
 The Console tab in the app talks to the server's admin port: the live log, the command line and the same commands the server's page has, once the admin password is set.
+
+<p align="center">
+  <img src="docs/img/launcher-console.png" alt="The app's Console tab connected to a server, with a status command answered" width="860">
+</p>
+
+### 🧩 Mods
+Server mods run on the server and players install nothing. A mod that needs a piece on the player's side is published by the server, and the Mods tab installs it into a profile for that server when you connect, asks once, and removes what a server no longer needs. A plain Steam start of the game never sees any of it.
+
+<p align="center">
+  <img src="docs/img/launcher-mods.png" alt="The app's Mods tab for a server that runs no client-side mods" width="860">
+</p>
 
 ### 📡 Server query
 The server answers Source A2S on the port above the gameplay port with its status and player count, so monitoring tools and hosting panels can read it.
@@ -58,7 +69,7 @@ The server answers Source A2S on the port above the gameplay port with its statu
 If the server cannot start, it writes what stopped it to `waygate\boot-report.txt` and refuses to run.
 
 ### 🔄 Plain game afterwards
-Starting Dimraeth from Steam after a Waygate session runs the normal game. The mod only acts when the app started the game. The app updates itself on start.
+Starting Dimraeth from Steam after a Waygate session runs the normal game. The mod only acts when the app started the game; while it is on, the game's version corner reads the Waygate version beside the game's. The app updates itself on start.
 
 <p align="center">
   <img src="docs/img/exploring.png" alt="Exploring a Dimraeth world hosted on a Waygate server" width="860">
