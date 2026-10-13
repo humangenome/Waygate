@@ -103,7 +103,7 @@ This repo publishes the player side: `WaygateSetup-<version>.exe`, a `WaygateSet
 Yes. The game cannot reach a Waygate server without it.
 
 ### Does it change my game?
-It adds `winhttp.dll` and a `BepInEx` folder next to `Dimraeth.exe`. Steam updates the game as normal. Delete those two to remove it.
+It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone; delete those five to remove it from the game.
 
 ### Where is my hero saved?
 On your PC, where Dimraeth keeps it. The server holds the world.
