@@ -20,7 +20,7 @@ Open an issue using the **Bug report** template. Include:
 - The app log, and the server log if you host the server
 - Whether anyone else can reproduce it on a clean server
 
-If your issue is about managed hosting you bought — the control panel, billing, or support — contact your host directly. Waygate's GitHub issues are for the open-source app, server, and mods themselves.
+If your issue is about a hosted server you rent (the control panel, billing, or support), contact your host directly. Waygate's GitHub issues are for the open-source app, server, and mods themselves.
 
 ## Feature requests
 

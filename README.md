@@ -77,7 +77,7 @@ Starting Dimraeth from Steam after a Waygate session runs the normal game. The m
 
 ## Install
 
-### Managed hosting
+### Rent a server
 [SurvivalServers.com Dimraeth server hosting](https://www.survivalservers.com/services/game_servers/dimraeth/?utm_source=github&utm_medium=readme_install&utm_campaign=waygate) comes with Waygate installed and the ports open. The control panel has an Open in Waygate button that adds the server to the app.
 
 ### Players
