@@ -22,33 +22,33 @@ Every player must install Waygate to join a Waygate server. Stock Dimraeth canno
 
 ## Features
 
-### 🧭 Join by address
+### 🧭 Join by IP
 Add the server's `ip:port` in the app, pick a character, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up and how many players are on it.
 
 <p align="center">
   <img src="docs/img/in-game.png" alt="A Dimraeth world on a Waygate server" width="860">
 </p>
 
-### 👥 Eight players, eight seats
+### 👥 Up to 8 players
 Dimraeth's own co-op limit is eight. The server has no character of its own, so every seat goes to a player. The first player in leads the party and the rest join it.
 
-### 🧝 Your own characters
+### 🧝 Bring your single-player hero
 Heroes are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server.
 
-### 🔒 Join password
+### 🔒 Password protection
 Set one on the server and the app asks for it before connecting.
 
-### 💬 Chat switch
+### 💬 Turn chat off
 The host can turn player chat off for the whole server. Dimraeth's own chat setting is per player; this one is enforced on the server.
 
-### 🗺️ The server's own web page
+### 🗺️ Live web map
 Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
 
 <p align="center">
   <img src="docs/img/web-map.png" alt="A Waygate server's web page: the Earlwood map from the game's own pixels with a player's live position" width="860">
 </p>
 
-### 🖥️ Console in the app
+### 🖥️ Server console
 The Console tab in the app talks to the server's admin port: the live log, the command line and the same commands the server's page has, once the admin password is set.
 
 <p align="center">
@@ -65,11 +65,8 @@ Server mods run on the server and players install nothing. A mod that needs a pi
 ### 📡 Server query
 The server answers Source A2S on the port above the gameplay port with its status and player count, so monitoring tools and hosting panels can read it.
 
-### 🚦 Boot report
+### 🚦 Startup error report
 If the server cannot start, it writes what stopped it to `waygate\boot-report.txt` and refuses to run.
-
-### 🔄 Plain game afterwards
-Starting Dimraeth from Steam after a Waygate session runs the normal game. The mod only acts when the app started the game; while it is on, the game's version corner reads the Waygate version beside the game's. The app updates itself on start.
 
 <p align="center">
   <img src="docs/img/exploring.png" alt="Exploring a Dimraeth world hosted on a Waygate server" width="860">
@@ -104,6 +101,9 @@ Yes. The game cannot reach a Waygate server without it.
 
 ### Does it change my game?
 It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone; delete those five to remove it from the game.
+
+### Does single-player still work?
+Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when the app started the game, and while it does, the game's version corner shows the Waygate version beside the game's. The app updates itself on start.
 
 ### Where is my hero saved?
 On your PC, where Dimraeth keeps it. The server holds the world.
