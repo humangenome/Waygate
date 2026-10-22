@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#install"><img src="https://img.shields.io/badge/Platform-Windows_10%2F11%2FServer-blue.svg" alt="Platform"></a>
   <a href="https://store.steampowered.com/app/2402680/"><img src="https://img.shields.io/badge/Game-Dimraeth-7b5cff.svg" alt="Game"></a>
-  <a href="#-eight-players-eight-seats"><img src="https://img.shields.io/badge/Players-up_to_8-brightgreen.svg" alt="Players"></a>
+  <a href="#how-many-players-can-join"><img src="https://img.shields.io/badge/Players-up_to_8-brightgreen.svg" alt="Players"></a>
   <a href="https://github.com/HumanGenome/WaygateServer"><img src="https://img.shields.io/badge/Server_Source-WaygateServer-444.svg" alt="Server Source"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License"></a>
 </p>
@@ -16,60 +16,48 @@ Dimraeth has no dedicated server. Its multiplayer is a Steam lobby hosted from o
 
 Every player must install Waygate to join a Waygate server. Stock Dimraeth cannot connect to a Waygate server directly.
 
-<p align="center">
-  <img src="docs/img/launcher.png" alt="The Waygate app: a saved server with its status and player count, the Connect button, and the Console and Mods tabs" width="860">
-</p>
-
 ## Features
 
-### 🧭 Join by IP
-Add the server's `ip:port` in the app, pick a character, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up and how many players are on it.
+### 🗺️ Live map
+Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
 
 <p align="center">
-  <img src="docs/img/in-game.png" alt="A Dimraeth world on a Waygate server" width="860">
+  <img src="docs/img/web-v0.3.15.png" alt="A Waygate server's own web page: the world map from the game's own pixels with the players' live positions" width="860">
 </p>
 
-### 👥 Up to 8 players
-Dimraeth's own co-op limit is eight. The server has no character of its own, so every seat goes to a player. The first player in leads the party and the rest join it.
+### 🧭 Join by IP
+Add the server's `ip:port` in the app, pick a hero, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up, who is on it and your ping.
+
+<p align="center">
+  <img src="docs/img/app-v0.3.15-servers.png" alt="The Waygate app with a saved Dimraeth server online: 2 of 4 players with their time and ping, the hero you play as, and the Connect button" width="860">
+</p>
 
 ### 🧝 Bring your single-player hero
 Heroes are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server.
 
+<p align="center">
+  <img src="docs/img/app-v0.3.15-characters.png" alt="The Waygate app's Characters window with two heroes on this PC and the one in use highlighted" width="620">
+</p>
+
 ### 🔒 Password protection
 Set one on the server and the app asks for it before connecting.
 
-### 💬 Turn chat off
-The host can turn player chat off for the whole server. Dimraeth's own chat setting is per player; this one is enforced on the server.
-
-### 🗺️ Live web map
-Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
-
 <p align="center">
-  <img src="docs/img/web-map.png" alt="A Waygate server's web page: the Earlwood map from the game's own pixels with a player's live position" width="860">
+  <img src="docs/img/app-v0.3.15-password.png" alt="The Waygate app asking for a server's join password before it connects" width="420">
 </p>
 
 ### 🖥️ Server console
 The Console tab in the app talks to the server's admin port: the live log, the command line and the same commands the server's page has, once the admin password is set.
 
 <p align="center">
-  <img src="docs/img/launcher-console.png" alt="The app's Console tab connected to a server, with a status command answered" width="860">
+  <img src="docs/img/app-v0.3.15-console.png" alt="The Waygate app's Console tab connected to a server, after the status and players commands" width="860">
 </p>
 
 ### 🧩 Mods
 Server mods run on the server and players install nothing. A mod that needs a piece on the player's side is published by the server, and the Mods tab installs it into a profile for that server when you connect, asks once, and removes what a server no longer needs. A plain Steam start of the game never sees any of it.
 
 <p align="center">
-  <img src="docs/img/launcher-mods.png" alt="The app's Mods tab for a server that runs no client-side mods" width="860">
-</p>
-
-### 📡 Server query
-The server answers Source A2S on the port above the gameplay port with its status and player count, so monitoring tools and hosting panels can read it.
-
-### 🚦 Startup error report
-If the server cannot start, it writes what stopped it to `waygate\boot-report.txt` and refuses to run.
-
-<p align="center">
-  <img src="docs/img/exploring.png" alt="Exploring a Dimraeth world hosted on a Waygate server" width="860">
+  <img src="docs/img/app-v0.3.15-mods.png" alt="The Waygate app's Mods tab for a server that needs nothing on the player's PC" width="860">
 </p>
 
 ## Install
@@ -79,11 +67,12 @@ If the server cannot start, it writes what stopped it to `waygate\boot-report.tx
 
 ### Players
 1. Download `WaygateSetup-latest.exe` from the [latest release](https://github.com/HumanGenome/Waygate/releases/latest/download/WaygateSetup-latest.exe).
-2. Run it. One install per PC.
-3. Open Waygate, add the server address, pick a character, click Connect.
+2. Run it. If Windows shows "Windows protected your PC", choose More info, then Run anyway. One install per PC.
+3. Open Waygate and add the server's IP and port.
+4. Pick a hero and click Connect.
 
 ### Self-hosted servers
-Requirements, ports, setup, the web page, the status file and the commands are in [WaygateServer](https://github.com/HumanGenome/WaygateServer). You need a Windows machine and a copy of Dimraeth's game files on it from your own Steam copy.
+Requirements, ports, setup, the web page, the status file and the commands are in [WaygateServer](https://github.com/HumanGenome/WaygateServer). You need a Windows machine and a copy of Dimraeth's game files on it from your own Steam copy. Hosts can also turn player chat off for the whole server (Dimraeth's own chat setting is per player; this one is enforced on the server). The server answers Source A2S on the port above the gameplay port with its status and player count, and when it cannot start it writes what stopped it to `waygate\boot-report.txt`.
 
 ## Releases
 
@@ -99,6 +88,9 @@ This repo publishes the player side: `WaygateSetup-<version>.exe`, a `WaygateSet
 ### Does everyone need the app?
 Yes. The game cannot reach a Waygate server without it.
 
+### How many players can join?
+Up to eight, the number Mudtek gives on Dimraeth's [Steam page](https://store.steampowered.com/app/2402680/), and the server has no character of its own, so every seat goes to a player. The first player in leads the party and the rest join it. The most we have seen on one server at once is six. The host sets the server's slot count.
+
 ### Does it change my game?
 It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone; delete those five to remove it from the game.
 
@@ -110,6 +102,9 @@ On your PC, where Dimraeth keeps it. The server holds the world.
 
 ### Can a world move between servers?
 Yes. The world save is a folder on the server; copy it to the other server.
+
+### Why does Windows warn about the installer?
+The installer is not code-signed, so Windows SmartScreen may show "Windows protected your PC". Choose More info, then Run anyway.
 
 ### Is this official?
 No. Waygate is an independent project. Mudtek does not ship dedicated servers for Dimraeth.
