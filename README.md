@@ -26,14 +26,14 @@ Every Waygate server serves a page about itself: the world map drawn from the ga
 </p>
 
 ### 🧭 Join by IP
-Add the server's `ip:port` in the app, pick a hero, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up, who is on it and your ping.
+Add the server's `ip:port` in the app, pick a hero, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up, who is on it, your ping, and the game version the server runs beside your own.
 
 <p align="center">
   <img src="docs/img/app-v0.3.15-servers.png" alt="The Waygate app with a saved Dimraeth server online: 2 of 4 players with their time and ping, the hero you play as, and the Connect button" width="860">
 </p>
 
 ### 🧝 Bring your single-player hero
-Heroes are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server.
+Heroes are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server. Deleting a hero in the app deletes it for good.
 
 <p align="center">
   <img src="docs/img/app-v0.3.15-characters.png" alt="The Waygate app's Characters window with two heroes on this PC and the one in use highlighted" width="620">
@@ -97,7 +97,7 @@ Up to eight, the number Mudtek gives on Dimraeth's [Steam page](https://store.st
 It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone; delete those five to remove it from the game.
 
 ### Does single-player still work?
-Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when the app started the game, and while it does, the game's version corner shows the Waygate version beside the game's.
+Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when the app started the game, and while it does, the game's version corner shows the Waygate version beside the game's. The one exception: if Steam Cloud brings back a hero you deleted in the app, the mod deletes it again when the game starts.
 
 ### Where is my hero saved?
 On your PC, where Dimraeth keeps it. The server holds the world.
