@@ -19,7 +19,7 @@ Every player must install Waygate to join a Waygate server. Stock Dimraeth canno
 ## Features
 
 ### 🗺️ Live map
-Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
+Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. On a rented server the page is off and the control panel has the map instead. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
 
 <p align="center">
   <img src="docs/img/web-v0.3.15.png" alt="A Waygate server's own web page: the world map from the game's own pixels with the players' live positions" width="860">
@@ -71,6 +71,8 @@ Server mods run on the server and players install nothing. A mod that needs a pi
 3. Open Waygate and add the server's IP and port.
 4. Pick a hero and click Connect.
 
+The app updates itself when a new version is out.
+
 ### Self-hosted servers
 Requirements, ports, setup, the web page, the status file and the commands are in [WaygateServer](https://github.com/HumanGenome/WaygateServer). You need a Windows machine and a copy of Dimraeth's game files on it from your own Steam copy. Hosts can also turn player chat off for the whole server (Dimraeth's own chat setting is per player; this one is enforced on the server). The server answers Source A2S on the port above the gameplay port with its status and player count, and when it cannot start it writes what stopped it to `waygate\boot-report.txt`.
 
@@ -95,13 +97,13 @@ Up to eight, the number Mudtek gives on Dimraeth's [Steam page](https://store.st
 It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone; delete those five to remove it from the game.
 
 ### Does single-player still work?
-Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when the app started the game, and while it does, the game's version corner shows the Waygate version beside the game's. The app updates itself on start.
+Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when the app started the game, and while it does, the game's version corner shows the Waygate version beside the game's.
 
 ### Where is my hero saved?
 On your PC, where Dimraeth keeps it. The server holds the world.
 
 ### Can a world move between servers?
-Yes. The world save is a folder on the server; copy it to the other server.
+Yes. A world is one file on the server, `waygate\save\Worlds\<world name>.jrwf`. Copy it to the other server's Worlds folder and set that server's World Name to match.
 
 ### Why does Windows warn about the installer?
 The installer is not code-signed, so Windows SmartScreen may show "Windows protected your PC". Choose More info, then Run anyway.
