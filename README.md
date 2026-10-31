@@ -6,7 +6,7 @@
   <a href="#install"><img src="https://img.shields.io/badge/Platform-Windows_10%2F11%2FServer-blue.svg" alt="Platform"></a>
   <a href="https://store.steampowered.com/app/2402680/"><img src="https://img.shields.io/badge/Game-Dimraeth-7b5cff.svg" alt="Game"></a>
   <a href="#how-many-players-can-join"><img src="https://img.shields.io/badge/Players-up_to_8-brightgreen.svg" alt="Players"></a>
-  <a href="https://github.com/HumanGenome/WaygateServer"><img src="https://img.shields.io/badge/Server_Source-WaygateServer-444.svg" alt="Server Source"></a>
+  <a href="https://github.com/HumanGenome/WaygateServer"><img src="https://img.shields.io/badge/Server-WaygateServer-444.svg" alt="Server"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License"></a>
 </p>
 
