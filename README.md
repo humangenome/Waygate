@@ -103,7 +103,7 @@ Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when t
 On your PC, where Dimraeth keeps it. The server holds the world.
 
 ### Can a world move between servers?
-Yes. A world is one file on the server, `waygate\save\Worlds\<world name>.jrwf`. Copy it to the other server's Worlds folder and set that server's World Name to match.
+Yes. In the app's World window (it needs each server's admin password), download a backup from one server, then use Import a save on the other; the world comes in under that server's World Name at its next start, and the world it replaces is kept. By hand: a world is one file, `waygate\save\Worlds\<world name>.jrwf`. Copy it to the other server's Worlds folder and set that server's World Name to match.
 
 ### Why does Windows warn about the installer?
 The installer is not code-signed, so Windows SmartScreen may show "Windows protected your PC". Choose More info, then Run anyway.
