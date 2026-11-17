@@ -12,31 +12,31 @@
 
 # Waygate
 
-Dimraeth has no dedicated server. Its multiplayer is a Steam lobby hosted from one player's copy of the game. Waygate adds a Dimraeth dedicated server: [WaygateServer](https://github.com/HumanGenome/WaygateServer) runs the game headless on a Windows machine with a public IP and port, and the Waygate app connects players to it by address.
+Dimraeth has no dedicated server. Its multiplayer is a Steam lobby hosted from one player's copy of the game. Waygate adds a Dimraeth dedicated server. Players join it by IP with the Waygate app.
 
-Every player must install Waygate to join a Waygate server. Stock Dimraeth cannot connect to a Waygate server directly.
+Every player needs the Waygate app to join.
 
 ## Features
 
 ### 🗺️ Live map
-Every Waygate server serves a page about itself: the world map drawn from the game's own pixels, sharp all the way in to the game's closest zoom, with each player's position every five seconds, the Waygates and crystals they have found, and a fog of war over every region nobody has discovered yet; the console, who is playing and Discord alerts. Players get the map by address; the owner unlocks the rest with the admin password. On a rented server the page is off and the control panel has the map instead. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
+Every Waygate server has its own web page with a live map: the world drawn from the game's own pixels, every player's position every five seconds, the Waygates and crystals they've found, and fog of war over ground nobody has explored yet. The owner unlocks the console, kick and ban, and Discord alerts with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
 
 <p align="center">
   <img src="docs/img/web-v0.3.15.png" alt="A Waygate server's own web page: the world map from the game's own pixels with the players' live positions" width="860">
 </p>
 
 ### 🧭 Join by IP
-Add the server's `ip:port` in the app, pick a hero, click Connect. The app puts the connection mod next to your game files, starts Dimraeth and joins the server. The app shows whether the server is up, who is on it, your ping, and the game version the server runs beside your own.
+Click Add server in the app, type the server's IP and port, pick a character and click Connect. The app starts Dimraeth and joins the server. Your server list shows whether each server is up, who's on it, your ping, and the game version it runs beside your own.
 
 <p align="center">
-  <img src="docs/img/app-v0.3.15-servers.png" alt="The Waygate app with a saved Dimraeth server online: 2 of 4 players with their time and ping, the hero you play as, and the Connect button" width="860">
+  <img src="docs/img/app-v0.3.15-servers.png" alt="The Waygate app with a saved Dimraeth server online: 2 of 4 players with their time and ping, the character you play as, and the Connect button" width="860">
 </p>
 
-### 🧝 Bring your single-player hero
-Heroes are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server. Deleting a hero in the app deletes it for good.
+### 🧝 Bring your single-player character
+Characters are made in the game as always and stay on your PC. The app lists them and you choose which one to bring to a server. Deleting a character in the app deletes it for good.
 
 <p align="center">
-  <img src="docs/img/app-v0.3.15-characters.png" alt="The Waygate app's Characters window with two heroes on this PC and the one in use highlighted" width="620">
+  <img src="docs/img/app-v0.3.15-characters.png" alt="The Waygate app's Characters window with two characters on this PC and the one in use highlighted" width="620">
 </p>
 
 ### 🔒 Password protection
@@ -47,14 +47,14 @@ Set one on the server and the app asks for it before connecting.
 </p>
 
 ### 🖥️ Server console
-The Console tab in the app talks to the server's admin port: the live log, the command line and the same commands the server's page has, once the admin password is set.
+The app's Console tab shows the server's live log and runs admin commands once the server has an admin password. Any Source RCON tool works too.
 
 <p align="center">
   <img src="docs/img/app-v0.3.15-console.png" alt="The Waygate app's Console tab connected to a server, after the status and players commands" width="860">
 </p>
 
 ### 🧩 Mods
-Server mods run on the server and players install nothing. A mod that needs a piece on the player's side is published by the server, and the Mods tab installs it into a profile for that server when you connect, asks once, and removes what a server no longer needs. A plain Steam start of the game never sees any of it.
+Server mods run on the server, so players install nothing. When a server needs a mod on your PC too, the Mods tab asks once, installs it for that server only when you connect, and removes it when the server stops using it. Starting Dimraeth from Steam runs the normal game.
 
 <p align="center">
   <img src="docs/img/app-v0.3.15-mods.png" alt="The Waygate app's Mods tab for a server that needs nothing on the player's PC" width="860">
@@ -63,58 +63,48 @@ Server mods run on the server and players install nothing. A mod that needs a pi
 ## Install
 
 ### Rent a server
-[SurvivalServers.com Dimraeth server hosting](https://www.survivalservers.com/services/game_servers/dimraeth/?utm_source=github&utm_medium=readme_install&utm_campaign=waygate) comes with Waygate installed and the ports open. The control panel has an Open in Waygate button that adds the server to the app.
+[SurvivalServers.com](https://www.survivalservers.com/services/game_servers/dimraeth/?utm_source=github&utm_medium=readme_install&utm_campaign=waygate) runs Dimraeth servers with WaygateServer installed. Command Center has an Open in Waygate button that adds the server to the app.
 
 ### Players
 1. Download `WaygateSetup-latest.exe` from the [latest release](https://github.com/HumanGenome/Waygate/releases/latest/download/WaygateSetup-latest.exe).
 2. Run it. If Windows shows "Windows protected your PC", choose More info, then Run anyway. One install per PC.
-3. Open Waygate and add the server's IP and port.
-4. Pick a hero and click Connect.
+3. Open Waygate, click Add server and type the server's IP and port.
+4. Pick a character and click Connect.
 
 The app updates itself when a new version is out.
 
-### Self-hosted servers
-Requirements, ports, setup, the web page, the status file and the commands are in [WaygateServer](https://github.com/HumanGenome/WaygateServer). You need a Windows machine and a copy of Dimraeth's game files on it from your own Steam copy. Hosts can also turn player chat off for the whole server (Dimraeth's own chat setting is per player; this one is enforced on the server). The server answers Source A2S on the port above the gameplay port with its status and player count, and when it cannot start it writes what stopped it to `waygate\boot-report.txt`.
+### Host your own
+You need a Windows PC and Dimraeth's game files from your own Steam copy. Setup, ports and settings are in [WaygateServer](https://github.com/HumanGenome/WaygateServer).
 
 ## Releases
 
-This repo publishes the player side: `WaygateSetup-<version>.exe`, a `WaygateSetup-latest.exe` alias, and the release notes. The server package is on the [WaygateServer release page](https://github.com/HumanGenome/WaygateServer/releases/latest), with the changelog for both sides in [WaygateServer's CHANGELOG](https://github.com/HumanGenome/WaygateServer/blob/main/CHANGELOG.md).
+This repo has the app's installer, `WaygateSetup-<version>.exe` (also as `WaygateSetup-latest.exe`), and its release notes. The server download is on the [WaygateServer release page](https://github.com/HumanGenome/WaygateServer/releases/latest), and the changelog for both is in [WaygateServer's CHANGELOG](https://github.com/HumanGenome/WaygateServer/blob/main/CHANGELOG.md).
 
 ## Source
 
 - **Waygate** (this repo): the app players install, the downloads and the documentation.
-- **[WaygateServer](https://github.com/HumanGenome/WaygateServer)**: the server package hosts run next to Dimraeth's game files.
+- **[WaygateServer](https://github.com/HumanGenome/WaygateServer)**: the server download you unzip into Dimraeth's game folder.
 
 ## FAQ
 
-### Does everyone need the app?
-Yes. The game cannot reach a Waygate server without it.
-
 ### How many players can join?
-Up to eight, the number Mudtek gives on Dimraeth's [Steam page](https://store.steampowered.com/app/2402680/), and the server has no character of its own, so every seat goes to a player. The first player in leads the party and the rest join it. The most we have seen on one server at once is six. The host sets the server's slot count.
+Up to 8, the number Mudtek gives on Dimraeth's [Steam page](https://store.steampowered.com/app/2402680/). The server has no character of its own, so it doesn't count toward that limit. The first player in leads the party and the rest join it. The server's owner sets the player limit.
 
 ### Does it change my game?
-It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone; delete those five to remove it from the game.
+It adds `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version` and the `BepInEx` and `dotnet` folders next to `Dimraeth.exe`. Steam updates the game as normal. Uninstalling the app leaves the game folder alone. Delete those five to remove Waygate from the game.
 
 ### Does single-player still work?
-Yes. Starting Dimraeth from Steam runs the normal game: the mod only acts when the app started the game, and while it does, the game's version corner shows the Waygate version beside the game's. The one exception: if Steam Cloud brings back a hero you deleted in the app, the mod deletes it again when the game starts.
+Yes. Starting Dimraeth from Steam runs the normal game. The mod only acts when the app starts the game, and then the game's version corner shows the Waygate version too. It does one thing on every start: if Steam Cloud brings back a character you deleted in the app, it deletes that character again.
 
-### Where is my hero saved?
+### Where is my character saved?
 On your PC, where Dimraeth keeps it. The server holds the world.
 
 ### Can a world move between servers?
 Yes. In the app's World window (it needs each server's admin password), Migrate from another server brings in the newest snapshot of another server saved in the app; or Download a snapshot from one server and use Import a save on the other. The world comes in under that server's World Name at its next start, and the world it replaces is kept. By hand: a world is one file, `waygate\save\Worlds\<world name>.jrwf`. Copy it to the other server's Worlds folder and set that server's World Name to match.
 
-### Why does Windows warn about the installer?
-The installer is not code-signed, so Windows SmartScreen may show "Windows protected your PC". Choose More info, then Run anyway.
-
-### Is this official?
-No. Waygate is an independent project. Mudtek does not ship dedicated servers for Dimraeth.
-
-### Something broke
-[Open an issue](https://github.com/HumanGenome/Waygate/issues). If you rent a server, your host handles billing and control panel questions.
-
 ## Contributing
+
+Bugs: [open an issue](https://github.com/HumanGenome/Waygate/issues).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Security issues go through [private reporting](.github/SECURITY.md), never a public issue.
 
