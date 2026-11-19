@@ -19,7 +19,7 @@ Every player needs the Waygate app to join.
 ## Features
 
 ### 🗺️ Live map
-Every Waygate server has its own web page with a live map: the world drawn from the game's own pixels, every player's position every five seconds, the Waygates and crystals they've found, and fog of war over ground nobody has explored yet. The owner unlocks the console, kick and ban, and Discord alerts with the admin password. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
+A Waygate server you host yourself has its own web page with a live map: the world drawn from the game's own pixels, every player's position every five seconds, the Waygates and crystals they've found, and fog of war over ground nobody has explored yet. The owner unlocks the console, kick and ban, and Discord alerts with the admin password. On a rented server, the map and console are in your host's control panel instead. Details in [WaygateServer](https://github.com/HumanGenome/WaygateServer#the-web-page).
 
 <p align="center">
   <img src="docs/img/web-v0.3.15.png" alt="A Waygate server's own web page: the world map from the game's own pixels with the players' live positions" width="860">
