@@ -71,6 +71,8 @@ Server mods run on the server, so players install nothing. When a server needs a
 3. Open Waygate, click Add server and type the server's IP and port.
 4. Pick a character and click Connect.
 
+If Windows says Smart App Control blocked the installer, wait a day or two for Windows to recognize the new version and run it again, or turn Smart App Control off in Windows Security under App & browser control.
+
 The app updates itself when a new version is out.
 
 ### Host your own
