@@ -73,6 +73,8 @@ Server mods run on the server, so players install nothing. When a server needs a
 
 If Windows says Smart App Control blocked the installer, wait a day or two for Windows to recognize the new version and run it again, or turn Smart App Control off in Windows Security under App & browser control.
 
+If the app closes to update and then won't open, download the installer from our website and run it again.
+
 The app updates itself when a new version is out.
 
 ### Host your own
